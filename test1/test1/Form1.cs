@@ -30,11 +30,11 @@ namespace test1
 
         private void tanar_btn_Click(object sender, EventArgs e)
         {
-            tanar_form tanar_form_open = new tanar_form();
+            tanar_belep tanar_belep_open = new tanar_belep();
 
             this.Hide();
 
-            tanar_form_open.ShowDialog();
+            tanar_belep_open.ShowDialog();
 
             this.Close();
         }
