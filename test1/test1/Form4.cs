@@ -11,8 +11,21 @@ using System.Windows.Forms;
 namespace test1
 {
     public partial class tanar_belep : Form
-    {
-        string tanar_jelszo = "teszt";
+    {       
+
+        public bool Belep(string jelszo)
+        {
+            string tanar_jelszo = "teszt";
+
+            bool belepett = false;
+
+            if (tanar_jelszo == jelszo)
+            {
+                belepett = true;
+            }
+
+            return belepett;
+        }
 
         public tanar_belep()
         {
@@ -23,8 +36,8 @@ namespace test1
         }
 
         private void tanar_belep_btn_Click(object sender, EventArgs e)
-        {
-            if ((tanar_jelszo_txtbox.Text == tanar_jelszo) && (tanar_felhasznev_txtbox.Text != ""))
+        {            
+            if (Belep(tanar_jelszo_txtbox.Text) == true)
             {
                 tanar_form tanar_form_open = new tanar_form();
 
@@ -36,11 +49,10 @@ namespace test1
             }
             else
             {
-                MessageBox.Show("Nem megfelelő felhasználónév vagy jelszó!", "Hiba!");
+                MessageBox.Show("Nem megfelelő jelszó!", "Hiba!");
 
                 tanar_jelszo_txtbox.Clear();
-            }
-
+            }            
         }
     }
 }
